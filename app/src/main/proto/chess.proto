@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package chessPackage;
+
+service Chess {
+  rpc sendChessMove ( ChessMove ) returns ( ChessMove );
+  rpc receiveChessMove(noparam) returns (ChessMove);
+}
+
+message noparam {}
+
+message ChessMove {
+   int32 step = 1;
+   int32 fromX = 2;
+   int32 fromY = 3;
+   int32 toX = 4;
+   int32 toY = 5;
+}
